@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.jalupriyangga.layoutandui"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.jalupriyangga.layoutandui"
