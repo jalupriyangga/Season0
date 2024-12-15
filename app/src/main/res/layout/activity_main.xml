@@ -62,5 +62,16 @@
         app:layout_constraintVertical_bias="0.0"
         android:layout_marginHorizontal="10dp"
         app:srcCompat="@drawable/pl_logo" />
+    
+    <EditText
+        android:id="@+id/inputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:hint="Enter some text here"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintEnd_toStartOf="@id/buttonButton"
+        app:layout_constraintBottom_toBottomOf="@id/buttonButton"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
