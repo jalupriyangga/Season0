@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,12 +25,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val titleTextView : TextView = findViewById(R.id.titleTextView)
+        val subtitleTextView : TextView = findViewById(R.id.subtitleTextView)
 
         val learnMoreButton : Button = findViewById(R.id.learnMoreButton)
         learnMoreButton.setOnClickListener {
             // TODO: Navigate main activity to detailed activity
             Log.d("MainActivity", "Learn more button clicked")
+            val title = titleTextView.text
             val intent : Intent = Intent(it.context, DetailedActivity::class.java)
+            intent.putExtra("title", title)
             startActivity(intent)
         }
     }
