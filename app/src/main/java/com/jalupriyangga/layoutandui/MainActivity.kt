@@ -1,5 +1,6 @@
 package com.jalupriyangga.layoutandui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -24,6 +25,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        val learnMoreButton : Button = findViewById(R.id.learnMoreButton)
+        learnMoreButton.setOnClickListener {
+            // TODO: Navigate main activity to detailed activity
+            Log.d("MainActivity", "Learn more button clicked")
+            val intent : Intent = Intent(it.context, DetailedActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
 
