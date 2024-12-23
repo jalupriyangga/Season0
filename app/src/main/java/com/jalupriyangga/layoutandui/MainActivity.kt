@@ -23,28 +23,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        //Inputtext
-        val inputEditText: EditText = findViewById(R.id.inputEditText)
-
-
-        // Button button:
-        val button: Button = findViewById(R.id.buttonButton)
-        var isClicked = false
-
-        button.setOnClickListener {
-            val input = inputEditText.text.toString()
-            if (!isClicked) {
-                Log.i("MainActivity", input)
-                Log.i("MainActivity", "Button clicked")
-                button.text = "Clicked"
-                Toast.makeText(it.context, input, Toast.LENGTH_SHORT).show()
-                Snackbar.make(it, input, Snackbar.LENGTH_SHORT).show()
-            } else {
-                Log.i("MainActivity", "Button unClicked")
-                button.text = "BUTTON"
-            }
-            isClicked = !isClicked
-        }
 
     }
 }
