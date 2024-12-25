@@ -11,6 +11,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -24,19 +26,32 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val titleTextView : TextView = findViewById(R.id.titleTextView)
-        val subtitleTextView : TextView = findViewById(R.id.subtitleTextView)
-
-        val learnMoreButton : Button = findViewById(R.id.learnMoreButton)
-        learnMoreButton.setOnClickListener {
-            // TODO: Navigate main activity to detailed activity
-            Log.d("MainActivity", "Learn more button clicked")
-            val title = titleTextView.text
-            val intent : Intent = Intent(it.context, DetailedActivity::class.java)
-            intent.putExtra("title", title)
-            startActivity(intent)
+//
+//        val titleTextView : TextView = findViewById(R.id.titleTextView)
+//        val subtitleTextView : TextView = findViewById(R.id.subtitleTextView)
+//
+//        val learnMoreButton : Button = findViewById(R.id.learnMoreButton)
+//        learnMoreButton.setOnClickListener {
+//            // TODO: Navigate main activity to detailed activity
+//            Log.d("MainActivity", "Learn more button clicked")
+//            val title = titleTextView.text
+//            val intent : Intent = Intent(it.context, DetailedActivity::class.java)
+//            intent.putExtra("title", title)
+//            startActivity(intent)
+//        }
+//
+        val dataForAdapter = ArrayList<String>()
+        repeat(150){index ->
+            dataForAdapter.add("Element $index")
         }
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val simpleAdapter = SimpleAdapter()
+        simpleAdapter.setData(dataForAdapter)
+        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+
+        recyclerView.adapter = simpleAdapter
+
     }
 }
 
