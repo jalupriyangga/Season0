@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         val simpleAdapter = SimpleAdapter()
-        simpleAdapter.setData(dataForAdapter)
+        simpleAdapter.setData(dataForAdapter, "Soccer stuff")
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
         recyclerView.adapter = simpleAdapter
